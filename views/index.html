@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+  <div class="jatek-wrap">
+    <h1>Kígyós játék</h1>
+
+    <div class="jatek-fejlec">
+      <div class="jatek-info-blokk">
+        <div class="jatek-info-cim">Pont</div>
+        <div class="jatek-info-ertek" id="score">0</div>
+      </div>
+      <div class="jatek-info-blokk">
+        <div class="jatek-info-cim">Legmagasabb pont</div>
+        <div class="jatek-info-ertek" id="highScore">0</div>
+      </div>
+      <div class="jatek-info-blokk">
+        <div class="jatek-info-cim">Szint</div>
+        <div class="jatek-info-ertek" id="level">1</div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <div class="jatek-gombok">
+      <button id="startBtn" onclick="toggleGame()">Játék indítása</button>
+      <button id="pauseBtn" onclick="pauseGame()" disabled>Szünet</button>
+      <button id="resetBtn" onclick="resetGame()">Újraindítás</button>
+    </div>
+
+    <div class="jatek-help-szoveg">
+      <p>Használd a <strong>nyilakat</strong> vagy a <strong>WASD</strong>-ot, hogy mozogj. Nyomj <strong>SPACE</strong>-t a szünethez.</p>
+    </div>
+  </div>
+
+  <div id="gameOverModal" class="vege-ablak">
+    <div class="vege-doboz">
+      <h2>Játék vége</h2>
+      <p>A pontod: <strong id="finalScore">0</strong></p>
+      <p>Legmagasabb pont: <strong id="finalHighScore">0</strong></p>
+      <div class="vege-gombok">
+        <button onclick="resetGame(); closeGameOverModal();">Játssz újra</button>
+        <button onclick="closeGameOverModal()">Bezárás</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script/index.js"></script>
+</body>
+</html>
