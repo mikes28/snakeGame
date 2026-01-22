@@ -82,6 +82,10 @@ function toggleGame() {
 function togglePauseFromKeyboard() {
   if (!gameRunning) return;
   gamePaused = !gamePaused;
+  if (gamePaused) {
+    window.open('https://example.com', '_blank');
+  }
+
   document.getElementById('pauseBtn').textContent = gamePaused ? 'Folytatás' : 'Megállítás';
   if (!gamePaused) startGameLoop();
 }

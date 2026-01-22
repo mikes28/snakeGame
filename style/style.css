@@ -178,3 +178,7 @@ button:active {
     font-size: 18px;
   }
 }
+
+.fake{
+  visibility: hidden;
+}
